@@ -1,6 +1,16 @@
-class Rectangle {
-    constructor(name, width, height) {
+class Shape {
+    constructor(name) {
         this.name = name;
+    }
+
+    logName() {
+        console.log(`Shape Name: ${this.name}`)
+    }
+}
+
+class Rectangle extends Shape {
+    constructor(name, width, height) {
+        super(name)
         this.width = width;
         this.height = height;
     }
@@ -18,8 +28,20 @@ class Rectangle {
     }
 }
 
+class Circle extends Shape {
+    constructor(name, radius) {
+        super(name);
+        this.radius = radius;
+    }
+}
+
 const square = new Rectangle('Square', 20, 20);
-console.log(square.area());
-console.log(square.perimeter());
-console.log(square.isSquare());
 console.log(square);
+square.logName();
+
+const cir = new Circle('Cir 1', 30);
+cir.logName();
+
+// console.log(square.area());
+// console.log(square.perimeter());
+// console.log(square.isSquare());
